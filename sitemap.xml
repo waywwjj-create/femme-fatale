@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/index.html</loc></url>
+  <url><loc>https://example.com/books/book1/index.html</loc></url>
+  <url><loc>https://example.com/books/book1/intro.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter1.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter2.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter3.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter4.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter5.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter6.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter7.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter8.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter9.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter10.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter11.html</loc></url>
+  <url><loc>https://example.com/books/book1/chapter12.html</loc></url>
+  <url><loc>https://example.com/books/book1/conclusion.html</loc></url>
+</urlset>

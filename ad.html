@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جارٍ التحميل... | Femme Fatale</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="fm">Femme <em>Fatale</em></span></a>
+  </div>
+</header>
+
+<main class="interstitial-page">
+  <span class="eyebrow">لحظة قصيرة</span>
+  <h1 id="ad-label">جارٍ تحضير الفصل التالي...</h1>
+
+  <!-- ============================================================
+       AdSense placeholder. This is where the real <ins class="adsbygoogle">
+       unit goes once the AdSense account is approved.
+       Ads appear ONLY here — before reading starts and between
+       chapters — never inside the chapter text itself.
+  ============================================================ -->
+  <div class="ad-slot" data-size="interstitial">
+    <span class="ad-tag">مساحة إعلانية — Google AdSense</span>
+    <span>سيظهر إعلانكِ هنا بعد ربط حساب AdSense</span>
+  </div>
+
+  <a href="index.html" id="continue-btn" class="btn-start" aria-disabled="true">
+    متابعة القراءة (<span id="countdown">5</span>)
+  </a>
+  <p class="timer-note">يمكنكِ المتابعة تلقائياً بعد انتهاء العدّ التنازلي</p>
+</main>
+
+<script>
+  (function () {
+    "use strict";
+    var params = new URLSearchParams(window.location.search);
+    var target = params.get("to") || "index.html";
+    var label = params.get("label");
+
+    var btn = document.getElementById("continue-btn");
+    var countdownEl = document.getElementById("countdown");
+    var labelEl = document.getElementById("ad-label");
+
+    btn.setAttribute("href", target);
+    if (label) {
+      labelEl.textContent = "جاهزة لـ" + " " + decodeURIComponent(label) + "؟";
+    }
+
+    var seconds = 5;
+    var interval = setInterval(function () {
+      seconds -= 1;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        countdownEl.parentElement.textContent = "متابعة القراءة";
+        btn.removeAttribute("aria-disabled");
+      } else {
+        countdownEl.textContent = seconds;
+      }
+    }, 1000);
+  })();
+</script>
+
+</body>
+</html>

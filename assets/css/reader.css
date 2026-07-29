@@ -1,0 +1,134 @@
+/* =========================================================
+   FEMME FATALE — Reading Page styles
+   Loaded in addition to style.css on chapter pages.
+   ========================================================= */
+
+:root{
+  --reader-size: 1.15rem;
+  --reader-bg: #FFFFFF;
+  --reader-fg: #201C14;
+  --reader-fg-soft: #6B6656;
+}
+
+body.reader{
+  background:var(--reader-bg);
+  transition:background .4s var(--ease), color .4s var(--ease);
+}
+
+/* ---------------- Progress bar ---------------- */
+.reading-progress{
+  position:fixed; top:0; right:0; left:0; height:3px; z-index:60;
+  background:transparent;
+}
+.reading-progress .bar{
+  height:100%; width:0%;
+  background:var(--c-gold-deep);
+  transition:width .1s linear;
+}
+
+/* ---------------- Reader top bar ---------------- */
+.reader-bar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--c-line);
+}
+body.dark .reader-bar{
+  background:rgba(20,18,14,0.92);
+  border-color:rgba(255,255,255,0.08);
+}
+.reader-bar .container{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px; gap:14px;
+}
+.reader-bar .back-link{
+  font-size:.9rem; color:var(--c-ink-soft); display:flex; align-items:center; gap:6px;
+}
+.reader-bar .chapter-tag{
+  font-family:var(--f-display); font-size:1rem; color:var(--c-ink);
+}
+body.dark .reader-bar .chapter-tag,
+body.dark .reader-bar .back-link{ color:#EDEAE0; }
+
+.reader-controls{ display:flex; align-items:center; gap:8px; }
+.reader-controls button{
+  width:38px; height:38px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--c-line);
+  color:var(--c-ink-soft);
+  transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  font-size:1rem;
+}
+.reader-controls button:hover{ background:var(--c-paper-warm); color:var(--c-ink); }
+body.dark .reader-controls button{
+  border-color:rgba(255,255,255,0.16); color:#C9C4B4;
+}
+body.dark .reader-controls button:hover{ background:rgba(255,255,255,0.06); color:#fff; }
+
+/* ---------------- Reading column ---------------- */
+.reader-page{
+  max-width:760px; margin:0 auto; padding:64px 28px 40px;
+}
+.reader-page .chapter-heading{
+  font-family:var(--f-display); font-weight:400;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  text-align:center; margin:0 0 48px;
+  color:var(--reader-fg);
+}
+.reader-page .book-tag{
+  display:block; text-align:center; font-size:.86rem;
+  letter-spacing:.1em; color:var(--c-gold-deep); margin-bottom:10px;
+}
+
+.chapter-text{
+  font-size:var(--reader-size);
+  line-height:2;
+  color:var(--reader-fg);
+  letter-spacing:.002em;
+}
+.chapter-text p{ margin:0 0 1.6em; }
+.chapter-text p:first-of-type::first-letter{
+  font-family:var(--f-display);
+  font-size:2.6em; color:var(--c-gold-deep); float:right; line-height:.8;
+  margin:.06em 0 0 .12em;
+}
+
+body.dark{ --reader-bg:#141210; --reader-fg:#EDEAE0; --reader-fg-soft:#A6A18E; }
+body.dark .chapter-text{ color:var(--reader-fg); }
+
+/* ---------------- Chapter nav ---------------- */
+.chapter-nav{
+  max-width:760px; margin:60px auto 0; padding:28px 28px 0;
+  border-top:1px solid var(--c-line);
+  display:flex; justify-content:space-between; gap:16px;
+}
+body.dark .chapter-nav{ border-color:rgba(255,255,255,0.1); }
+.chapter-nav a{
+  display:flex; flex-direction:column; gap:6px;
+  padding:14px 22px; border-radius:var(--radius-m);
+  border:1px solid var(--c-line);
+  font-size:.9rem; color:var(--c-ink-soft);
+  transition:background .25s var(--ease), border-color .25s var(--ease);
+  max-width:46%;
+}
+.chapter-nav a:hover{ background:var(--c-paper-warm); }
+body.dark .chapter-nav a{ border-color:rgba(255,255,255,0.14); color:#C9C4B4; }
+body.dark .chapter-nav a:hover{ background:rgba(255,255,255,0.05); }
+.chapter-nav .dir-label{ font-size:.74rem; letter-spacing:.08em; color:var(--c-gold-deep); }
+.chapter-nav .next{ text-align:left; margin-right:auto; }
+.chapter-nav .ch-title{ color:var(--reader-fg); font-family:var(--f-display); }
+
+.reader-footer-space{ height:70px; }
+
+/* ---------------- Text size variants ---------------- */
+body[data-text-size="s"] .chapter-text{ --reader-size:1rem; }
+body[data-text-size="m"] .chapter-text{ --reader-size:1.15rem; }
+body[data-text-size="l"] .chapter-text{ --reader-size:1.34rem; }
+body[data-text-size="xl"] .chapter-text{ --reader-size:1.55rem; }
+
+@media (max-width:600px){
+  .reader-page{ padding:48px 20px 30px; }
+  .chapter-nav{ flex-direction:column; }
+  .chapter-nav a{ max-width:100%; }
+  .chapter-nav .next{ margin-right:0; }
+}
