@@ -1,0 +1,313 @@
+/* =========================================================
+   FEMME FATALE — Information & Legal Pages
+   Used by: About / Privacy Policy / Contact
+   ========================================================= */
+
+/* ---------------- Page Hero ---------------- */
+
+.info-hero{
+  padding:80px 0 55px;
+  text-align:center;
+  background:
+    radial-gradient(
+      55% 70% at 50% 20%,
+      var(--c-gold-mist) 0%,
+      transparent 72%
+    );
+}
+
+.info-hero .eyebrow{
+  display:block;
+  font-family:var(--f-caption);
+  font-size:.82rem;
+  letter-spacing:.14em;
+  color:var(--c-gold-deep);
+  margin-bottom:10px;
+}
+
+.info-hero h1{
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:clamp(2rem,4vw,2.8rem);
+  margin:0 0 14px;
+  color:var(--c-ink);
+}
+
+.info-hero p{
+  max-width:650px;
+  margin:0 auto;
+  color:var(--c-ink-soft);
+  font-size:1rem;
+}
+
+
+/* ---------------- Main Information Area ---------------- */
+
+.info-page{
+  padding:0 0 90px;
+}
+
+.info-container{
+  max-width:850px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+
+/* ---------------- Information Card ---------------- */
+
+.info-card{
+  background:#fff;
+  border:1px solid var(--c-line);
+  border-radius:var(--radius-m);
+  box-shadow:var(--shadow-card);
+  padding:42px 46px;
+}
+
+.info-card + .info-card{
+  margin-top:24px;
+}
+
+
+/* ---------------- Section ---------------- */
+
+.info-section{
+  padding-bottom:30px;
+  margin-bottom:30px;
+  border-bottom:1px solid var(--c-line);
+}
+
+.info-section:last-child{
+  padding-bottom:0;
+  margin-bottom:0;
+  border-bottom:none;
+}
+
+.info-section h2{
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:1.55rem;
+  margin:0 0 12px;
+  color:var(--c-ink);
+}
+
+.info-section h3{
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:1.2rem;
+  margin:22px 0 8px;
+  color:var(--c-ink);
+}
+
+.info-section p{
+  margin:0 0 12px;
+  color:var(--c-ink-soft);
+  line-height:1.9;
+}
+
+.info-section p:last-child{
+  margin-bottom:0;
+}
+
+
+/* ---------------- Lists ---------------- */
+
+.info-section ul{
+  margin:12px 0 0;
+  padding-right:22px;
+  color:var(--c-ink-soft);
+  line-height:1.9;
+}
+
+.info-section li{
+  margin-bottom:7px;
+}
+
+.info-section li:last-child{
+  margin-bottom:0;
+}
+
+
+/* ---------------- Gold Highlight ---------------- */
+
+.info-highlight{
+  background:var(--c-paper-warm);
+  border-right:3px solid var(--c-gold-deep);
+  padding:18px 20px;
+  margin:20px 0;
+  border-radius:var(--radius-s);
+}
+
+.info-highlight p{
+  margin:0;
+}
+
+
+/* ---------------- Contact Details ---------------- */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:25px;
+}
+
+.contact-card{
+  border:1px solid var(--c-line);
+  border-radius:var(--radius-m);
+  padding:24px;
+  background:var(--c-paper-warm);
+}
+
+.contact-card .contact-label{
+  display:block;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  color:var(--c-gold-deep);
+  margin-bottom:7px;
+}
+
+.contact-card strong{
+  display:block;
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:1.15rem;
+  color:var(--c-ink);
+}
+
+.contact-card a{
+  color:var(--c-ink-soft);
+}
+
+.contact-card a:hover{
+  color:var(--c-gold-deep);
+}
+
+
+/* ---------------- Contact Form ---------------- */
+
+.contact-form{
+  margin-top:30px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:7px;
+  font-size:.9rem;
+  color:var(--c-ink);
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:13px 15px;
+  border:1px solid var(--c-line);
+  border-radius:var(--radius-s);
+  background:#fff;
+  color:var(--c-ink);
+  font-family:var(--f-body);
+  font-size:.95rem;
+  outline:none;
+  transition:
+    border-color .25s var(--ease),
+    box-shadow .25s var(--ease);
+}
+
+.form-group textarea{
+  min-height:170px;
+  resize:vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color:var(--c-gold-deep);
+  box-shadow:0 0 0 3px var(--c-gold-mist);
+}
+
+.contact-form .btn-start{
+  border:none;
+  cursor:pointer;
+}
+
+
+/* ---------------- Back Link ---------------- */
+
+.info-back{
+  display:flex;
+  justify-content:center;
+  margin-top:35px;
+}
+
+.info-back a{
+  color:var(--c-ink-soft);
+  font-size:.9rem;
+  transition:color .25s var(--ease);
+}
+
+.info-back a:hover{
+  color:var(--c-gold-deep);
+}
+
+
+/* ---------------- Dark Mode Compatibility ---------------- */
+
+body.dark .info-card{
+  background:#1B1916;
+  border-color:rgba(255,255,255,.10);
+}
+
+body.dark .info-section h2,
+body.dark .info-section h3,
+body.dark .info-card,
+body.dark .info-hero h1,
+body.dark .contact-card strong,
+body.dark .form-group label{
+  color:#EDEAE0;
+}
+
+body.dark .info-section p,
+body.dark .info-section ul,
+body.dark .info-hero p,
+body.dark .contact-card a,
+body.dark .info-back a{
+  color:#B9B4A4;
+}
+
+body.dark .contact-card{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.10);
+}
+
+body.dark .form-group input,
+body.dark .form-group textarea{
+  background:#141210;
+  border-color:rgba(255,255,255,.12);
+  color:#EDEAE0;
+}
+
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width:700px){
+
+  .info-hero{
+    padding:60px 0 40px;
+  }
+
+  .info-container{
+    padding:0 20px;
+  }
+
+  .info-card{
+    padding:30px 22px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+}
