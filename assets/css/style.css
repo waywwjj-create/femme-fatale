@@ -256,6 +256,7 @@ input:focus-visible{
 /* ===========================================================
    BOOK GRID / CARDS
 =========================================================== */
+
 .book-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(230px,1fr));
@@ -268,66 +269,154 @@ input:focus-visible{
   overflow:hidden;
   background:#fff;
   box-shadow:var(--shadow-card);
-  transition:box-shadow .4s var(--ease), transform .4s var(--ease);
-  opacity:0; transform:translateY(22px);
+  transition:
+    box-shadow .4s var(--ease),
+    transform .4s var(--ease);
+  opacity:0;
+  transform:translateY(22px);
 }
-.book-card.in-view{ animation:cardIn .7s var(--ease) forwards; }
-@keyframes cardIn{ to{ opacity:1; transform:translateY(0); } }
 
-.book-card:hover, .book-card:focus-within{
+.book-card.in-view{
+  animation:cardIn .7s var(--ease) forwards;
+}
+
+@keyframes cardIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.book-card:hover,
+.book-card:focus-within{
   box-shadow:var(--shadow-card-hover);
   transform:translateY(-6px);
 }
 
+
+/* ---------------- BOOK COVER ---------------- */
+
 .book-cover-wrap{
   position:relative;
-  aspect-ratio:3/4;
+  display:block;
+  width:100%;
+  aspect-ratio:3 / 4;
   overflow:hidden;
-  background:var(--c-ink);
+  background:#15130F;
 }
+
 .book-cover-wrap img{
-  width:100%; height:100%; object-fit:cover;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center;
+  opacity:1;
+  visibility:visible;
   transition:transform .6s var(--ease);
 }
+
 .book-card:hover .book-cover-wrap img,
 .book-card:focus-within .book-cover-wrap img{
   transform:scale(1.07);
 }
 
+
+/* ---------------- BOOK OVERLAY ---------------- */
+
 .book-overlay{
-  position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(21,19,15,0) 40%, rgba(21,19,15,0.82) 100%);
+  position:absolute;
+  inset:0;
+  z-index:2;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(21,19,15,0) 40%,
+      rgba(21,19,15,.82) 100%
+    );
+
   opacity:0;
-  display:flex; align-items:flex-end; justify-content:center;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+
   padding-bottom:26px;
+
   transition:opacity .4s var(--ease);
 }
+
 .book-card:hover .book-overlay,
-.book-card:focus-within .book-overlay{ opacity:1; }
+.book-card:focus-within .book-overlay{
+  opacity:1;
+}
+
+
+/* ---------------- READ BUTTON ---------------- */
 
 .btn-read{
-  display:inline-flex; align-items:center; gap:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
   background:var(--c-green);
   color:#fff;
+
   padding:11px 30px;
   border-radius:999px;
+
   font-size:.98rem;
+
   transform:translateY(10px);
   opacity:0;
-  transition:transform .4s var(--ease) .05s, opacity .4s var(--ease) .05s, background .25s var(--ease);
-}
-.book-card:hover .btn-read,
-.book-card:focus-within .btn-read{ transform:translateY(0); opacity:1; }
-.btn-read:hover, .btn-read:focus-visible{ background:var(--c-green-hover); }
 
-.book-meta{ padding:18px 18px 22px; }
-.book-meta h3{
-  font-family:var(--f-display); font-weight:400;
-  font-size:1.18rem; margin:0 0 8px;
+  transition:
+    transform .4s var(--ease) .05s,
+    opacity .4s var(--ease) .05s,
+    background .25s var(--ease);
 }
+
+.book-card:hover .btn-read,
+.book-card:focus-within .btn-read{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.btn-read:hover,
+.btn-read:focus-visible{
+  background:var(--c-green-hover);
+}
+
+
+/* ---------------- BOOK INFORMATION ---------------- */
+
+.book-meta{
+  padding:18px 18px 22px;
+}
+
+.book-meta h3{
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:1.18rem;
+  margin:0 0 8px;
+}
+
+.book-meta h3 a{
+  color:var(--c-ink);
+}
+
 .book-meta p{
-  margin:0; color:var(--c-ink-soft); font-size:.92rem;
-  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  margin:0;
+  color:var(--c-ink-soft);
+  font-size:.92rem;
+
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+
   overflow:hidden;
 }
 
