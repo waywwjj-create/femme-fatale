@@ -550,3 +550,26 @@ input:focus-visible{
 .interstitial-page h1{ font-family:var(--f-display); font-weight:400; font-size:1.8rem; margin:0 0 24px; }
 .interstitial-page .btn-start{ margin-top:30px; }
 .interstitial-page .timer-note{ margin-top:14px; font-size:.82rem; color:var(--c-ink-soft); }
+/* =========================================================
+   BOOK COVER — FIX
+========================================================= */
+
+.book-cover-wrap{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:3 / 4;
+  overflow:hidden;
+  background:#15130F;
+}
+
+.book-cover-wrap img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
